@@ -1,0 +1,3 @@
+# Governance status — TKS-GOV-001
+PROPOSED / ACCEPTANCE PENDING. PR #1 remains Draft and unmerged, head 317e7b425f691d067c3b8aea60ef900611146a9a at intake. PR #2 is separate docs-only governance proposal, expected number 2; verify actual URL/head from PR. No coding. Both main branches read at intake, no parent writes.
+Scope: ChatGPT planning/handoff, Coding Agent instruction, Git routing and session recording. No root AGENTS.md or DEVELOPMENT_WORKFLOW.md overwritten because owned by PR #1 draft. Root GOVERNANCE.md added to enable discovery. Shared index/status/log reconciliation intentionally pending both plans' integration. See canonical task and workstream index. Source authorization remains independent. Runtime/tests NOT RUN.

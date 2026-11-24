@@ -1,0 +1,2 @@
+# Tool usage log
+2026-11-25 / TKS-GOV-001 S1 / ChatGPT: GitHub connector used to read parent AGENTS, workflow and vault guide/status, target main and PR #1, create docs-only governance branch/checkpoint and Draft PR subject to verification. No local installation, config mutation, model invocation or source extraction. No credential material handled. See session report and live PR. Dedicated agent identity and main protection not verified.
