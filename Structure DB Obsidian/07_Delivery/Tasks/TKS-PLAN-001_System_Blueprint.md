@@ -24,3 +24,6 @@ Owner review Draft PR; if approved merge personally; Codex implements TKS-IMP-00
 - Report SHA-256: 00804910959f3642a5cbb4aabd001d90f119a5262e9b0e7ffd596156b0f45923 PUBLIC_SAFE.
 - Summary SHA-256: 82d6bdb36d2d33626d05a9312ff7ad7c3d1aa1db21df71d446d50cc75e75c55c PUBLIC_SAFE.
 - S1 report/summary untouched. Shell/runtime checks NOT RUN. Exact dependency/client compatibility, source rights and parent mapping remain gated. Final receipt not applicable until acceptance readiness. Owner reviews/merges personally; next Codex TKS-IMP-001 after verifying actual Gate P merge.
+
+## S3 — governance integration and usage clarification
+Session S3 / class A / acceptance pending. Verified Owner merged PR #2 at ffb9468dad7e383232fa7144e9cbfdbde58835ac; PR #1 remains Draft; starting head 317e7b425f691d067c3b8aea60ef900611146a9a. Added root links, current status and [[Skill_Packaging_and_Usage_Modes]]. Scope P5/P6 unchanged; no runtime work. Report [[2026-11-25_TKS-PLAN-001_S3_Report]] and summary [[2026-11-25_TKS-PLAN-001_S3_Summary]] PUBLIC_SAFE. SHA-256 pending connector-only checkpoint; publication SHA in live PR. Owner reviews/merges #1; actual combined main verification before Codex TKS-IMP-001. No final receipt; shell/runtime tests NOT RUN.

@@ -38,3 +38,13 @@
 - [[Decision_Log]] / [[Change_Log]] / [[Agent_Run_Log]]
 - [[2026-11-25_TKS-PLAN-001_S1_Report]] / [[2026-11-25_TKS-PLAN-001_S1_Summary]]
 - [[2026-11-25_TKS-PLAN-001_S2_Report]] / [[2026-11-25_TKS-PLAN-001_S2_Summary]]
+
+## Governance and installable integrations (S3)
+- [[WORKFLOW]] / [[Prompt_and_Handoff_Templates]] — ChatGPT coordination
+- [[AGENTS]] — detailed coding agent policy in 02_Coding_Agent_Workflow
+- [[Git_PR_Lifecycle]] / [[Obsidian_Protocol]] / [[Session_Record_Templates]]
+- [[TKS-GOV-001_Workflow_and_Reporting]] / [[TKS_PR_Workstream_Index]]
+- [[Agent_Tool_Registry]] / [[Tool_Usage_Log]]
+- [[Skill_Packaging_and_Usage_Modes]] — standalone extension, reusable skill, MCP, local AI
+- [[2026-11-25_TKS-PLAN-001_S3_Report]] / [[2026-11-25_TKS-PLAN-001_S3_Summary]]
+Governance files exist on main at ffb9468dad7e383232fa7144e9cbfdbde58835ac; merged vault contains both document sets.
