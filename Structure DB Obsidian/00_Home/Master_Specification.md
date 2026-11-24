@@ -61,3 +61,6 @@ No runtime test passes are claimed. Owner acceptance, compatibility tests, sourc
 
 ## 8. Change control
 S1 baseline retained; S2 expands same task and PR (class A). No source implementation or source-specific selectors. On Gate P merge, freeze accepted plan SHA. If an agent discovers scope, security, API semantics, data shape or dependency decisions materially differ, stop that portion and open/reuse a docs-only amendment. Small in-scope implementation refinements documented with actual evidence. Owner alone merges; no auto-merge.
+
+## 9. Review cross-reference
+[[Requirement_Traceability_Matrix]] connects all 65 detailed requirements to 182 planned verification cases (including conditional/deferred review). [[Owner_and_Agent_Review_Checklist]] defines review gates and first implementation handoff. The initial 17 parent requirement IDs and ten implementation task IDs are unchanged. See these references before approving Gate P.

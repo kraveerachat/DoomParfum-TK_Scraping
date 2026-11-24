@@ -256,6 +256,18 @@ Unit pure contracts/picker/normalization, integration stores/API/MCP, browser E2
 | OPS-12 | R14.03 | Release end-to-end staging package | Manual, agents, local AI and parent dry-run verified |
 
 ## Evidence format and release gates
-Total planned test cases: 175. Each execution report: test ID, exact command, environment/browser/client/model version, commit SHA, expected vs actual, pass/fail/skip/not run, exit code, evidence path, failure classification, limitations. Never fill PASS without execution. Coverage map links R01–R17 to tests above; R17 optional review only, not mandatory feature delivery. SEC suite threat coverage is explicit; future controls repeated when enabled.
+Total planned verification cases: 182 (175 initial cases + 7 coverage/conditional review cases). Each execution report: test ID, exact command, environment/browser/client/model version, commit SHA, expected vs actual, pass/fail/skip/not run, exit code, evidence path, failure classification, limitations. Never fill PASS without execution. Coverage map links R01–R17 to tests above; R17 optional review only, not mandatory feature delivery. SEC suite threat coverage is explicit; future controls repeated when enabled.
 Proposed quantitative targets (review before implementation): exact gold record/field match for deterministic extraction; zero unauthorized requests/actions, zero secret leakage in test outputs; bounded preview <=10 records and 64 KiB; result pagination <=100 records and 64 KiB; no duplicate committed rows after retry; no new request after cancellation observed. Hover responsiveness target p95 <=100 ms on F01 and <=250 ms on F14 1000 cards on owner host, subject to measurement/calibration; never claim benchmark before test. Local model target >=90% exact mapping on fixed gold set, zero unsafe actions executed, otherwise advisory/manual-only.
 Task gate: applicable tests pass and independent review exact SHA, all failures/skip explicit. Release gate: P1–P7 mandatory verified scopes, P8 operational suite, no unresolved blocker/high in released functionality, actual browser and client smoke, owner review, documentation/current status, backup/rollback. Source permission and parent actual import gates remain separate. If unavailable real client or model, mark relevant acceptance pending; do not report complete release.
+
+## COV — direct coverage additions
+| Test ID | Requirement | Phase | Stimulus / setup | Expected assertion |
+|---|---|---|---|---|
+| COV-01 | R01.03 | P3 | Authenticated pair, disconnect, revoke and reconnect | UI only says paired after successful authenticated handshake; stale/offline/revoked distinct |
+| COV-02 | R03.01 | P1b | List, table and grid in three distinct scoped fixtures | One record per selected item; header/distractor excluded |
+| COV-03 | R04.03 | P1b | Rename a field and inspect image URL with no asset grant | Original evidence unchanged; no remote image request |
+| COV-04 | R12.04 | P7/P8 | Missing optional performance and unlicensed image reference | Missing recorded; no image download or reuse without rights |
+| COV-05 | R17.01 | P8 conditional | Review optional permitted catalogue adapter; if approved implement owned fixture | Decision/rights/mapping recorded; optional not core gate |
+| COV-06 | R17.02 | Deferred review only | Review organizational social-link scope | No implementation absent separate approval; no bulk personal collection |
+| COV-07 | R17.03 | Deferred review only | Review email tool scope | Bulk personal contact harvesting excluded; no implementation in master plan |
+See [[Requirement_Traceability_Matrix]] for all 65 direct mappings. COV-05 conditional, COV-06/07 deferred review only; all NOT RUN.
