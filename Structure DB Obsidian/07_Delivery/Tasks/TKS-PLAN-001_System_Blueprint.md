@@ -15,3 +15,12 @@ Owner review Draft PR; if approved merge personally; Codex implements TKS-IMP-00
 - S1 report SHA-256 (UTF-8 content): a1331e5e3a7c7a2a14928f2b428cff04df745a20441a3124ab05ed5ee65e7d52 PUBLIC_SAFE.
 - S1 summary SHA-256 (UTF-8 content): 056568b9fa22e6cf841e0c22a31c8e56e7ec693063457fdda0c5cd55dc1e3990 PUBLIC_SAFE.
 - Source terms exact clauses 5.3 and 5.7, revised 2026-01-14; no live extraction performed. PR remains draft awaiting Owner acceptance; final receipt not applicable yet. This checkpoint's SHA is recorded in live PR, not self-referentially.
+
+## S2 — Master specification expansion (current session)
+| S2 | Same PR master plan expansion | ACCEPTANCE PENDING | [[2026-11-25_TKS-PLAN-001_S2_Report]] | [[2026-11-25_TKS-PLAN-001_S2_Summary]] |
+- Owner request: fully detailed plan from inception to release, not abbreviated blueprint. Class A; same branch and Draft PR. Agent ChatGPT, date 2026-11-25; source edits NO; production NO; parent write NO.
+- Start SHA 1a5132f6d361b745fffac99ae7dde0ea23dc6b73; verified coverage checkpoint 4f13cfaabd1494ee8079bc0f11b9aadc43702bdb; final head in live PR.
+- Deliverables: [[Master_Specification]], [[Functional_Requirements_Detail]], [[Implementation_Master_Task_Map]], [[Requirement_Traceability_Matrix]], [[Verification_and_Acceptance_Matrix]], [[Owner_and_Agent_Review_Checklist]] and linked detailed specifications. 65/65 direct mappings, 83 subtasks, 182 unique planned verification cases including conditional/deferred reviews; all NOT RUN.
+- Report SHA-256: 00804910959f3642a5cbb4aabd001d90f119a5262e9b0e7ffd596156b0f45923 PUBLIC_SAFE.
+- Summary SHA-256: 82d6bdb36d2d33626d05a9312ff7ad7c3d1aa1db21df71d446d50cc75e75c55c PUBLIC_SAFE.
+- S1 report/summary untouched. Shell/runtime checks NOT RUN. Exact dependency/client compatibility, source rights and parent mapping remain gated. Final receipt not applicable until acceptance readiness. Owner reviews/merges personally; next Codex TKS-IMP-001 after verifying actual Gate P merge.
