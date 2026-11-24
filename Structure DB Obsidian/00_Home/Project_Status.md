@@ -1,0 +1,2 @@
+# Current truth — 2026-11-25
+TKS-PLAN-001 / S1: proposed docs-only baseline, Owner acceptance pending; initial main 40166f338ed3cf5c198a8e9add1217633812ab6b; no prior PR at intake. See task and live PR for latest publication evidence. P1–P8 NOT STARTED. Runtime tests NOT RUN. Fragrantica live access NO-GO; synthetic fixtures only until source rights verified. Parent read-only. Next Owner reviews plan; only after merge Codex P1. Do not infer state from historical records.
