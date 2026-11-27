@@ -1,10 +1,10 @@
 # Local installation, operation and release plan
-Proposed documentation and operational acceptance; commands below are design targets, not existing scripts. No deployment or install in planning. Scope Windows first, Brave and Chrome; local-only; owner manually chooses to start each component.
+Proposed documentation and operational acceptance; commands below are design targets, not existing scripts. No deployment or install in planning. Scope Windows first, Google Chrome on Windows; local-only; owner manually chooses to start each component.
 
 ## Installation sequence
 1. Verify supported Windows, Node/npm and browser versions; check disk space and dependency versions; clone only TKS repo. Do not overwrite parent folder or existing browser profiles.
 2. Check approved plan/release tag and lockfile; inspect install hooks, run documented project-local npm ci only after authorization. Build extension locally; no remote JS and no mandatory account.
-3. In Chrome chrome://extensions or Brave brave://extensions, enable Developer mode, Load unpacked built extension folder; record actual path and browser version. Pin toolbar action. Grant only requested narrow permissions. If unsupported sidebar API, use documented standalone fallback subject to acceptance.
+3. In Google Chrome at chrome://extensions, enable Developer mode, Load unpacked built extension folder; record actual path and browser version. Pin toolbar action. Grant only requested narrow permissions. If unsupported sidebar API, use documented standalone fallback subject to acceptance.
 4. Manual smoke on owned fixture: launch local fixture server, explicit fixture grant, select list, preview, extract, open standalone table, export JSON/CSV; verify no daemon/model necessary. Detail smoke after P2.
 5. Optional daemon: run documented local start command (proposed npm run daemon:start), bind 127.0.0.1, choose local runtime directory and port, verify readiness. Pair extension through explicit owner consent. Do not expose port to network.
 6. Optional MCP: register project-scoped stdio adapter in each supported client using actual tested instructions. Start with synthetic fixture; check tool list and pairing. No global config changes or subscription credential copying.
@@ -40,7 +40,7 @@ Extension IndexedDB holds manual recipes/datasets; daemon SQLite holds imported/
 | Parent schema mismatch | latest accepted contract | update mapping plan; no direct DB write |
 ## Release checklist
 - [ ] Accepted plan and implementation PRs traceable; exact release SHA.
-- [ ] Actual install/upgrade/uninstall smoke for Chrome/Brave Windows.
+- [ ] Actual install/upgrade/uninstall smoke for Google Chrome on Windows.
 - [ ] Manual list/detail, deterministic automation, both agents and LM Studio verified within scope.
 - [ ] Security and source policy review; no outstanding released-scope blocker/high.
 - [ ] Synthetic parent handoff package validated; no parent mutation.
@@ -48,3 +48,13 @@ Extension IndexedDB holds manual recipes/datasets; daemon SQLite holds imported/
 - [ ] Obsidian status, reports, summaries, receipts and reviewer evidence reconcile.
 - [ ] Owner reviews and merges; local release distribution only unless separately approved.
 Optional P8 tools separately feature-flagged; bulk contact harvesting excluded; no browser store publication, public hosting or automatic production deployment.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

@@ -4,10 +4,10 @@ This is the normative proposed master plan for the independent DoomParfum-TK_Scr
 
 ## 1. Product objective
 Deliver a locally installed no-subscription-required visual browser extraction workbench with independent manual mode, agent-assisted mode (Codex and Claude Code), and optional LM Studio local AI. Build reusable rules, not a single hardcoded website crawler. Enable permissioned structured data acquisition and reviewed handoff to DoomParfum By TK; no direct coupling to parent database.
-The first useful deliverable is a working visual Chrome/Brave extension with standalone data table. The end-to-end deliverable is a bounded, auditable list-to-detail pipeline that supports multiple page sections and exports a normalized package. Every stage must be testable independently without accessing a prohibited site.
+The first useful deliverable is a working visual Google Chrome on Windows extension with standalone data table. The end-to-end deliverable is a bounded, auditable list-to-detail pipeline that supports multiple page sections and exports a normalized package. Every stage must be testable independently without accessing a prohibited site.
 
 ## 2. Owner-confirmed intent and proposed choices
-Confirmed from user: Chrome/Brave, visual mouse selection, list and multi-section detail extraction, separate data view, manual and agent workflows, local AI integration, independent companion repository, reuse of upstream tools, staged development and inherited Obsidian/PR workflow.
+Initial browser intent included Brave; S13 proposes superseding it with Chrome-only Windows. Other confirmed intent: visual mouse selection, list and multi-section detail extraction, separate data view, manual and agent workflows, local AI integration, independent companion repository, reuse of upstream tools, staged development and inherited Obsidian/PR workflow.
 Proposed by planner: TypeScript monorepo, Node 24 LTS, MV3, Vite, HTML/CSS/TS, Fastify, SQLite, Zod/JSON Schema, Playwright library, custom MCP stdio, local provider adapter; dedicated runner profiles; original UI design; source policy default deny; versioned recipes and JSON-first results; conservative job limits. Exact dependency versions and SDK API must be verified in P1/P3 before installation. No paid service or Docker required.
 Fragrantica screenshots are a reference for information shape, not an authorization grant. The previously reviewed terms restrict automated access/data uses; live extraction and restricted reuse remain NO-GO absent explicit written authorization. Build fictional fixtures and approved source adapters only. Manual user research and owned input are separate from extension automation.
 
@@ -63,4 +63,21 @@ No runtime test passes are claimed. Owner acceptance, compatibility tests, sourc
 S1 baseline retained; S2 expands same task and PR (class A). No source implementation or source-specific selectors. On Gate P merge, freeze accepted plan SHA. If an agent discovers scope, security, API semantics, data shape or dependency decisions materially differ, stop that portion and open/reuse a docs-only amendment. Small in-scope implementation refinements documented with actual evidence. Owner alone merges; no auto-merge.
 
 ## 9. Review cross-reference
-[[Requirement_Traceability_Matrix]] connects all 65 detailed requirements to 182 planned verification cases (including conditional/deferred review). [[Owner_and_Agent_Review_Checklist]] defines review gates and first implementation handoff. The initial 17 parent requirement IDs and ten implementation task IDs are unchanged. See these references before approving Gate P.
+[[Requirement_Traceability_Matrix]] connects all 75 detailed requirements to 210 planned verification cases (including conditional/deferred review). [[Owner_and_Agent_Review_Checklist]] defines review gates and first implementation handoff. The initial 17 parent requirement IDs and ten implementation task IDs are unchanged. See these references before approving Gate P.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+Retain17 requirement groups and10 major implementation tasks. Revised detail totals75 requirements,91 subtasks,210 planned cases. P1b002 has13 subtasks; P2/003 has11. First/second controlled HTTPS manual pilots need PG-MANUAL-1, exact protected pilot configuration and separate source/Owner approval. Full006 remains mandatory; no early daemon/MCP/AI dependency. If pilot entry fails, pilot acceptance is BLOCKED; offline-only scope requires explicit reviewed Owner choice.001 native acceptance/Owner merge and explicit002 instruction remain prerequisites. No general website compatibility guarantee.
+
+The exact identity/capability/state contracts below supersede only conflicting earlier generic descriptions; historical session evidence remains unchanged. Future material changes require Gate P again.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

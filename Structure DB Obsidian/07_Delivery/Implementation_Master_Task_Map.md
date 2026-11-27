@@ -39,7 +39,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 **Requirements:** R01.01–04, R02.01–05, R13, R16.
 
-**Goal:** User can load the extension in both browsers, explicitly activate an owned fixture tab and select the correct repeating group with visible outlines and cleanup. No extraction of external websites.
+**Goal:** User can load the extension in Google Chrome on Windows, explicitly activate an owned fixture tab and select the correct repeating group with visible outlines and cleanup. No extraction of external websites.
 
 **Planned paths:** root workspace/build manifests; apps/extension/{manifest,background,content,sidepanel}; packages/{contracts,source-policy,picker}; tests/fixtures, unit, e2e; vault.
 
@@ -48,7 +48,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 ### Ordered subtasks
 | ID | Work item | Implementation detail | Required evidence |
 |---|---|---|---|
-| 001.01 | Preflight and dependency review | Verify Windows, supported Node LTS/npm, Chrome and Brave versions; inspect actual repo, approved plan, source policy; select pinned dependencies with license and hook review. | Record versions, install authorization, lockfile and smoke; no global changes. |
+| 001.01 | Preflight and dependency review | Verify Windows, supported Node LTS/npm and actual Chrome version; inspect actual repo, approved plan, source policy; select pinned dependencies with license and hook review. | Record versions, install authorization, lockfile and smoke; no global changes. |
 | 001.02 | Workspace and build skeleton | Create npm workspaces, shared TS config, scripts, ignored runtime/output/caches, local bundle pipeline and test harness. Use minimal dependencies. | Clean npm ci, lint/typecheck/build, no secrets or external runtime network. |
 | 001.03 | Synthetic fixtures | Author fictional 20-card grid with sidebar distractors, table with headers, single item, nested repeated child and dynamic mutation pages. Define exact expected record IDs independently. | Fixture grant narrow and explicit; local server only; expected data checked in; no copied source HTML. |
 | 001.04 | Manifest and activation | Implement MV3 action, service worker and sidepanel shell, activeTab permission model and owned fixture grant; handle unsupported pages and denied origin before injection. | Manifest review; toolbar opens panel; no all_urls or cookie permission. |
@@ -56,10 +56,10 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 | 001.06 | Overlay and hover | Isolated content script, non-layout overlay, bounded geometry, throttled hover, visible instructions, Esc/close cleanup. | Visual test scroll/resize/zoom and no host click interception outside selection. |
 | 001.07 | Repeating group detection | Implement candidate ancestor analysis, structural signatures, bounded scoring, parent/child choice, confidence, scope and exact count. | Gold 20 cards selected, distractor excluded; single item does not fake group. |
 | 001.08 | Selection lifecycle | Lock/reselect, include/exclude if reproducible, manual fallback, tab switch/permission revoke, listener removal. | Keyboard-only select/cancel; repeated start/stop not duplicate handlers. |
-| 001.09 | Browser verification and handoff | Load unpacked Chrome and Brave Windows; collect actual versions, screenshots only of fixture, exact expected group result; document fallback if needed. | P1a acceptance before P1b; independent reviewer verifies exact SHA. |
+| 001.09 | Browser verification and handoff | Load unpacked Google Chrome on Windows; collect actual versions, screenshots only of fixture, exact expected group result; document fallback if needed. | P1a acceptance before P1b; independent reviewer verifies exact SHA. |
 
 ### Task-specific acceptance
-- [ ] Build/test evidence, actual Chrome + Brave smoke or explicit blocked browser acceptance, exact fixture group match, no unauthorized DOM, overlay cleanup.
+- [ ] Build/test evidence, actual Chrome Windows smoke under effective scope, exact fixture group match, no unauthorized DOM, overlay cleanup.
 - [ ] Test references: EXT-01–12, ALG-01–05, SEC-01/02/04/18/19/24. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
 - [ ] Document actual changed paths, known limitations, independent review findings and owner gate.
 - [ ] Verify dependency before next task; no automatic merge, no source/production permission inferred.
@@ -68,13 +68,13 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 **Status:** NOT STARTED. **Recommended agent:** Codex. **Branch proposal:** feat/tks-imp-002. **Dependencies:** 001 merged.
 
-**Requirements:** R03.01–04, R04.01–05, R06.01, R13, R16.
+**Requirements:** R03.01–04, R04.01–05, R06.01, R13, R16; R01.05, R02.06–08, R03.05, R06.04, R13.06–08, R16.04.
 
 **Goal:** Manual single-page workflow complete without backend: select group, choose fields, preview, extract, save data, open separate table, export JSON/CSV.
 
 **Planned paths:** apps/extension/{content,sidepanel,data-page,background}; packages/{contracts,extractor,recipes,export}; tests; vault.
 
-**Out of scope:** Multi-page actions, nested detail workflow, daemon and external agent.
+**Out of scope:** Multi-page/automated navigation, nested detail workflow, daemon and external agent. The only external-origin exception is a separately approved bounded PG-MANUAL-1 pilot; protected Fixture v2 is required for fixture extraction/storage/export. No ordinary/agent source administration.
 
 ### Ordered subtasks
 | ID | Work item | Implementation detail | Required evidence |
@@ -86,11 +86,16 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 | 002.05 | Local dataset and recipe storage | IndexedDB versioned stores and transactions, draft recipe revision, quota/error handling, reopen data after source tab closes. | Persistence, duplicate key and restart tests; no silent overwrite. |
 | 002.06 | Standalone data view | Open extension tab/window, dataset header, table/search/sort/filter, row drawer and warnings; safe text rendering. | Unicode, empty/partial/invalid data and XSS negative test. |
 | 002.07 | Export and deletion | JSON canonical, CSV quoting/formula neutralization, selected/all data, local download and confirmed deletion. | Round-trip fixtures with commas, quotes, newline, Thai, malicious formula; no remote upload. |
-| 002.08 | Manual installation and walkthrough | Document current P1 install/build, reproduce offline extraction in both browsers and demonstrate no backend/AI. | Owner can complete workflow from clean profile; record evidence and limitations. |
+| 002.08 | Manual installation and walkthrough | Document current P1 install/build, reproduce offline extraction in Google Chrome on Windows and demonstrate no backend/AI. | Owner can complete workflow from clean profile; record evidence and limitations. |
+| 002.09 | Reviewed protected Fixture Grant v2 and operation predicates; non-fixture Sources request/Owner-controlled authority boundary, protected seed cannot be edited/replaced/shadowed | After001 merged + amendment approval; before002.04–07 fixture capabilities and any non-fixture access; no daemon/MCP/AI prerequisite; requirements R13.06/07/08 | AUTH-01–06,AUTH-10 denial carry-forward,UX-03; v1 remains inspect-only; exact v2 reviewed separately |
+| 002.10 | Generic membership/live identity and versioned locator; separate validated SelectionRef handed to extraction engine | After002.09; precedes dependent002.01/02 field/row contracts; requirements R02.06/07,R03.05,R06.04,R13.08 | COMP-01–08,COMP-10/11,AUTH-05/07/08; picker membership versus R03.01 extraction distinction |
+| 002.11 | Exclusion/Undo snapshot integrity and opt-in durable exclusion preview, no positional replay | After002.10; integrates existing002.03/05, before final extraction approval; requirements R02.08,R06.04 | COMP-04/06,AUTH-07/08,UX-04; stale/identical/replacement cases reject safely |
+| 002.12 | Seven-state readiness UX, including shared pre-authorization denial presentation, validated in Google Chrome on Windows; capability-specific disabled actions | After002.09/10 typed reasons; integrate before existing002.08 walkthrough; requirements R01.05 | UX-01–04,AUTH-01/03/05; missing/stale grants remain denied |
+| 002.13 | Independent holdouts and first dedicated approved HTTPS pilot only after PG-MANUAL-1; fixture-only fallback requires explicit reviewed Owner scope decision | After existing002.01–08 and002.09–12; exact implementation/source/network/Owner gate before pilot, not full006 completion; requirements R02.06,R03.05,R13.06,R16.04 | COMP-01–13 applicable,AUTH-01–09,UX-01–04; AUTH-10 actor boundary carried; failed pilot BLOCKED/NOT VERIFIED |
 
 ### Task-specific acceptance
 - [ ] Exact gold list output, valid exports, persistent table, manual offline mode and safe rendering/permission tests.
-- [ ] Test references: ALG-06–12, DATA-01–10, EXT-13–16, SEC-04/14/15/18/24. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
+- [ ] Test references: ALG-06–12, DATA-01–10, EXT-13–16, SEC-04/14/15/18/24; applicable COMP-01–13,AUTH-01–09,UX-01–04; AUTH-10 design/denial carry-forward to006/007. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
 - [ ] Document actual changed paths, known limitations, independent review findings and owner gate.
 - [ ] Verify dependency before next task; no automatic merge, no source/production permission inferred.
 
@@ -98,13 +103,13 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 **Status:** NOT STARTED. **Recommended agent:** Codex, Claude Code for complex schema review. **Branch proposal:** feat/tks-imp-003. **Dependencies:** 002 merged.
 
-**Requirements:** R05.01–05, R06.02–03, R12.01–03, R13.
+**Requirements:** R05.01–05, R06.02–03, R12.01–03, R13; R01.05, R02.06–08, R03.05, R06.04, R13.06–08, R16.04.
 
 **Goal:** One detail page becomes structured record with independent sections and nested arrays; no list-only restriction. Source-agnostic recipe import/export and drift checks.
 
 **Planned paths:** packages/{contracts,extractor,recipes}; apps/extension detail UI and data-page; synthetic perfume fixtures; tests; vault.
 
-**Out of scope:** Live source-specific recipe, source grant approval, batch navigation, model generation.
+**Out of scope:** Production live source-specific recipe rollout, ordinary source-grant administration/approval, batch navigation and model generation. Only exact pre-authorized dedicated manual compatibility page/recipe under PG-MANUAL-1 and source rights is excepted; protected reviewed configuration, never self-approved source or unrestricted production website. No daemon/MCP/AI dependency.
 
 ### Ordered subtasks
 | ID | Work item | Implementation detail | Required evidence |
@@ -117,10 +122,13 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 | 003.06 | Drift and variant tests | Run against synthetic layout variations, missing section and duplicate labels; stop/flag rather than broaden selector. | Expected drift failure and manual repair path; evidence for alternatives. |
 | 003.07 | Detail result table | Parent record and nested child tables/drilldown, JSON view, separate CSV relations. | No array cross-join; source relationship and ordinal preserved. |
 | 003.08 | Review and manual demo | Complete fixture detail selection without AI; compare expected output and source policy. | Independent schema/UX review, report limitations and next task. |
+| 003.09 | Second approved HTTPS pilot/detail variants under the same scoped gate; no ordinary source-grant administration or production rollout | After accepted/merged002 and003 instruction; exact PG packet before second-origin access; no new006→002 dependency; requirements R02.06,R03.05,R13.06,R16.04 | COMP-04/05/07–14 applicable,AUTH-02/09; blocked pilot cannot count as fixture success |
+| 003.10 | Detail/nested durable identity and saved-intent migration/drift safety | After002.10/11 and existing003.02/04/05; no cross-array or cross-document identity merge; requirements R02.07/08,R06.04,R13.08 | COMP-06/10/14,AUTH-07/08; exact recipe/source revision binding |
+| 003.11 | Independent cross-phase authorization/identity/UX closure and scoped pilot evidence review | After003.09/10 and existing003.08; future006/007 actor review is a carried constraint, not early backend implementation; requirements R01.05,R13.06/07/08,R16.04 | Applicable COMP/AUTH-01–09/UX plus baseline DETAIL/RECIPE/SEC; AUTH-10 enforced before007 exposure |
 
 ### Task-specific acceptance
 - [ ] Multiple sections and nested arrays exact, validated reusable recipe, drift fails closed, detail mode works manually without daemon.
-- [ ] Test references: DETAIL-01–12, RECIPE-01–08, DATA-09/10, SEC-11/18/24. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
+- [ ] Test references: DETAIL-01–12, RECIPE-01–08, DATA-09/10, SEC-11/18/24; applicable COMP-04–14,AUTH-01–09,UX-01–04; AUTH-10 carried to006/007. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
 - [ ] Document actual changed paths, known limitations, independent review findings and owner gate.
 - [ ] Verify dependency before next task; no automatic merge, no source/production permission inferred.
 
@@ -190,7 +198,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 **Status:** NOT STARTED. **Recommended agent:** Claude Code security analysis; Codex scoped remediation; separate read-only reviewer. **Branch proposal:** feat/tks-imp-006. **Dependencies:** 005 merged; all previous evidence available.
 
-**Requirements:** R13.01–05, R08.04, R16.03.
+**Requirements:** R13.01–05, R08.04, R16.03; carried R13.07/08 and AUTH-10 actor/configuration authority review.
 
 **Goal:** Verify fail-closed source policy, egress, credential isolation and bounded execution before agent integration. Remain fixture-only if containment is unproven.
 
@@ -212,7 +220,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 ### Task-specific acceptance
 - [ ] Independent review and applicable negative controls, no unresolved blocker/high within scope, source gate still separate.
-- [ ] Test references: SEC-01–24 applicable at P4; future AI/assets tests re-run P5–P8. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
+- [ ] Test references: SEC-01–24 applicable at P4; AUTH-10 carried authority/configuration isolation review in006.03/06 before007 exposure; future AI/assets tests re-run P5–P8. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
 - [ ] Document actual changed paths, known limitations, independent review findings and owner gate.
 - [ ] Verify dependency before next task; no automatic merge, no source/production permission inferred.
 
@@ -220,7 +228,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 **Status:** NOT STARTED. **Recommended agent:** Claude Code + Codex sequentially; independent reviewer. **Branch proposal:** feat/tks-imp-007. **Dependencies:** 006 merged; verified actual clients and owner-authorized config.
 
-**Requirements:** R09.01–03, R10.01–03, R13.
+**Requirements:** R09.01–03, R10.01–03, R13; R13.07/08 carried source-administration/expiry constraints.
 
 **Goal:** Both supported clients use same custom MCP contract to inspect an owned fixture, propose selection, validate, preview and execute only approved recipe.
 
@@ -242,7 +250,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 ### Task-specific acceptance
 - [ ] Both real clients demonstrably work on fixture with visible proposal and bounded run; no subscription token proxy.
-- [ ] Test references: MCP-01–12, AGENT-01–08, SEC-03/12/15/16/18/21/24. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
+- [ ] Test references: MCP-01–12, AGENT-01–08, SEC-03/12/15/16/18/21/24; AUTH-10 independently verified before007 exposure in007.04/07/08. Execute applicable tests at exact reviewed SHA; mark not applicable with reason, not PASS by assumption.
 - [ ] Document actual changed paths, known limitations, independent review findings and owner gate.
 - [ ] Verify dependency before next task; no automatic merge, no source/production permission inferred.
 
@@ -326,7 +334,7 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 | 010.03 | Other catalogue tools evaluation | Assess permitted Shopify/brand feeds, organizational social links only within approved scope; bulk personal contacts non-goal. | Decision or separate amendment; not mandatory release blocker. |
 | 010.04 | Opt-in scheduler | Local-only schedule and explicit job approval/expiry/budget; daemon must be running; no surprise startup service. | Missed schedule/revoke/cancel/restart tests; no unauthorized auto replay. |
 | 010.05 | Performance and reliability | Benchmark 100/1000 fictional rows, UI responsiveness, job memory/time, storage quota and long-run recovery. | Measured results with environment; tune agreed threshold, no invented performance. |
-| 010.06 | Installation and upgrade | Clean Windows install, load unpacked Chrome/Brave, daemon/MCP/LM Studio optional setup, version migration and rollback. | New profile and upgrade smoke; uninstall removes only intended local artifacts. |
+| 010.06 | Installation and upgrade | Clean Windows install, load unpacked Google Chrome on Windows, daemon/MCP/LM Studio optional setup, version migration and rollback. | New profile and upgrade smoke; uninstall removes only intended local artifacts. |
 | 010.07 | Final end-to-end review | Manual, both agents, local AI and parent staging fixture; full regression, dependency/security and UX review. | All mandatory tests, unresolved limitations explicit, source permission separate. |
 | 010.08 | Release package and handoff | Versioned local distribution instructions, changelog, support/troubleshooting, immutable receipt after acceptance. | Owner-only release/merge; no public store publication or deployment implied. |
 
@@ -338,3 +346,18 @@ Current same Draft PR #1, docs only. Review master plan, contracts, security, de
 
 ## Release sequence and stop rules
 P1 usable manual list release candidate after 002; P2 detail candidate after 003; P4 deterministic automation fixture candidate after 006; P5 agent candidate after 007; P6 local AI candidate after 008; P7 handoff candidate after 009; P8 local release after 010. Each intermediate milestone can be used only within verified scope. If source or browser/client compatibility blocked, record exact limitation and keep verified modes usable; do not skip failing mandatory acceptance to claim completion. P8 optional tools can be explicitly deferred by owner without invalidating mandatory core. No fixed delivery dates or performance claims before measurements.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+Execution order is dependency order, not numeric order:001 merge + amendment→002.09→002.10→002.01/02;002.11/12 integrate with editor/storage before002.08/13.002.04–07 require reviewed Fixture v2;002.13 pilot requires all PG conditions.003 follows002 merge;003.09/10 precede003.11 closure. Protected pilot issuance belongs in002.09 with exact G01/G09 packet, never a dynamic approval bypass. Carry R13.07/08 and AUTH-10 into006.03/06 and007.04/07/08 acceptance/Requirements/Test references; no additional subtask or early backend dependency. Failure of pilot means BLOCKED until a reviewed Owner offline-only scope decision; do not invent002→006→002.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

@@ -1,5 +1,5 @@
 # Visual workbench — interaction and state specification
-Original UI using reference screenshots for interaction concepts only. Design for Chrome/Brave side panels approximately 320–480 CSS px; responsive at 280 px where possible, larger standalone data tab. Actual dimensions tested after install. Light/dark system theme, accessible contrast, restrained accent; color alone not sole status indicator.
+Original UI using reference screenshots for interaction concepts only. Design for Google Chrome on Windows side panels approximately 320–480 CSS px; responsive at 280 px where possible, larger standalone data tab. Actual dimensions tested after install. Light/dark system theme, accessible contrast, restrained accent; color alone not sole status indicator.
 
 ## Navigation and persistent shell
 | Screen | Entry | Contents | Primary action | Empty/error state |
@@ -70,3 +70,51 @@ Show disconnected/paired/leased/running/revoked; active origin and lease expiry;
 
 ## Accessibility and usability acceptance
 Keyboard navigation, visible focus, labelled controls, Esc cancel, focus restored after picker, reduced motion, no color-only alerts, semantic table headers, screen-reader count announcement throttled. Test browser zoom 80/100/125%, resize, scroll, multiple tabs, keyboard-only workflow, dark/light, UTF-8 labels. Empty states, denied source, daemon offline, storage full, invalid recipe, zero matches and partial export all have explicit messaging. No copied panda logo, copyrighted site imagery or original extension assets.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+## Authorization-state projection and protected Sources behavior
+## 8. Proposed user-facing states
+
+Use typed authorization/deny reasons, not substring matching of error messages. The following
+is a proposed UI projection/contract change for002.12; it does not modify current P1a enums.
+
+| State | Entry/meaning | Enabled behavior and exit |
+|---|---|---|
+| Idle | Source inspection and actual tab lease verified; no active selection | Start available; do not show readiness before STATUS establishes it |
+| Awaiting Authorization | Typed reason=checking before authoritative source/tab status; or reason=browserGesture/leasePending when required authorization is absent | Checking has no privileged actions and is not an eighth state; explain gesture/pending step; validated status can lead Idle |
+| Source Not Authorized | Current source/path/capability required for inspection is pending/denied/expired/revoked | Show reason and Source Management review path; no DOM access; approval still requires fresh toolbar activation |
+| Selecting | Valid current context and reviewed candidate preview | Scope/filter/reselect/cancel allowed; Confirm disabled until trusted lock |
+| Locked | Current exact member snapshot is frozen | Explicit review/Confirm; any accepted edit invalidates confirmation and advances revision |
+| Confirmed | Explicit current-context confirmation succeeded | Confirmation is not permission for extraction/storage/export; document/grant/member/edit change clears it |
+| Runtime Error | Actual transport/timeout/injection/protocol failure or unexpected safety failure | Specific safe recovery message, no stale success or implicit reauthorization |
+
+Exactly one checking model: **Awaiting Authorization with reason=checking**. Initial pending
+STATUS renders “Checking current source and tab authorization…” and enables no privileged
+operation. It does not assert that the source is approved or the tab authorized. Resolution
+is Idle only after valid readiness, Source Not Authorized for policy denial/expiry/revocation,
+Awaiting Authorization with a specific gesture/lease reason for normal prerequisites, or
+Runtime Error for actual transport/injection/protocol failure. No eighth Checking state and
+no message-substring authority. UX-01/02/03 assert these exact transitions/semantics.
+
+Expected DOM drift clears confirmation and unsafe state with a reselection notice; denial of
+a storage/export capability is action-specific and does not fabricate inspection denial or
+permission success. No old response/grant/selection survives expiry or revision changes.
+
+Historical Brave authorization-label observations remain in immutable reports. Proposed002.12 fixes shared typed readiness presentation and tests UX-02 in Chrome on Windows; no Brave-specific investigation or new deferral. A demonstrated mandatory001 defect would require separate
+scoped authorization; none is established by the existing message alone.
+
+
+
+Sources UI shows pending requests and protected Fixture/pilot grants read-only. It cannot administer/approve/expand/extend protected grants, including through automated UI workflows. Event trust is not Owner identity. The protected pilot issuance route is reviewed configuration plus exact packet/Owner decisions, not an enabling checkbox. UX-01–04 and AUTH-04/09/10 remain NOT RUN.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

@@ -32,4 +32,25 @@ FINAL: actual changed paths, tests counts/failures/not run, source rights, PR UR
 If plan not merged or permissions/dependencies missing STOP affected implementation and report BLOCKED. No fake SHA, tests or PR.
 
 ## First implementation instruction (not authorization to start now)
-After verifying PR #1 is Owner-merged: Codex TKS-IMP-001, P1a. Read master and linked detailed docs, then exact task subtasks 001.01–001.09 and EXT/ALG/SEC cases. Build workspace and owned fixture server, minimal MV3 shell/picker only. Do not implement list export, detail, daemon, AI or live scraping yet. Verify Chrome and Brave actual support, exact 20-card selection, safe cancellation and source denial. Publish authorized Draft implementation PR, full report and separate summary, update task overview, request independent review. Owner merges. If Gate P not verified, do not code.
+After verifying PR #1 is Owner-merged: Codex TKS-IMP-001, P1a. Read master and linked detailed docs, then exact task subtasks 001.01–001.09 and EXT/ALG/SEC cases. Build workspace and owned fixture server, minimal MV3 shell/picker only. Do not implement list export, detail, daemon, AI or live scraping yet. Verify Google Chrome on Windows actual support, exact 20-card selection, safe cancellation and source denial. Publish authorized Draft implementation PR, full report and separate summary, update task overview, request independent review. Owner merges. If Gate P not verified, do not code.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+- [ ] Verify75 requirements,91 subtasks,210 cases and28 additions NOT RUN; no orphan references/cycles.
+- [ ] Separate membership SelectionRef from extraction values; strict identity/capability/lifecycle rejection retained.
+- [ ] Verify protected Fixture v2 and protected pilot configuration issuance/anti-shadowing; no agent grant administration.
+- [ ] Independently check LOW-5 affected Security/Registry/architecture/002.09/13/AUTH-04/09/10 clauses, without repeating completed unchanged architecture/source review.
+- [ ] Before actual pilot, all G01–G10 exact-SHA/config/grant/network/rights and explicit Owner bindings pass; otherwise BLOCKED.
+- [ ] Full006 and later007 authority review remain mandatory; no universal host-traffic claims or reused fixture-loopback exception.
+- [ ] Close native001 acceptance/Owner merge and separate002 instruction; plan merge is not implementation/source/pilot/production authorization.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

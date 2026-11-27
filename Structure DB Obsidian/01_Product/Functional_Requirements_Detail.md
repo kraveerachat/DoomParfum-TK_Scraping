@@ -7,7 +7,7 @@ Owner/operator: installs extension, selects permitted tab, defines recipes, revi
 ## Functional requirements
 | ID | User-visible behavior | Acceptance / edge conditions | Task |
 |---|---|---|---|
-| R01.01 | Toolbar action opens side panel for active tab | Chrome and Brave actual Windows smoke; unsupported browser explains fallback | 001 |
+| R01.01 | Toolbar action opens side panel for active tab | Google Chrome on Windows actual Windows smoke; unsupported browser explains fallback | 001 |
 | R01.02 | Home shows tools, recipes, data, jobs, settings | Manual mode usable with daemon absent; no broken loading spinner | 001 |
 | R01.03 | Connection state distinguishes local, paired, offline, revoked | No green connected before authenticated handshake | 004 |
 | R01.04 | Picker state persists while side panel is reopened | No invisible selection after tab changes; recovery from worker restart | 001 |
@@ -67,7 +67,7 @@ Owner/operator: installs extension, selects permitted tab, defines recipes, revi
 | R15.01 | Clean page text and metadata on permitted content | Scoped text only; no blanket page HTML dump | 010 |
 | R15.02 | Image URL collection and optional download | Grant covers storage, file type/size checks; refs default | 010 |
 | R16.01 | Windows installation/uninstallation guide | Clean install, upgrade, rollback and no paid mandatory API | ALL |
-| R16.02 | Chrome/Brave compatibility and failure fallback | Test actual versions; no unsupported claims | 001/010 |
+| R16.02 | Google Chrome on Windows compatibility, recovery and conditional fallback | Actual Chrome version/profile/build and functionality; Brave OUT OF SCOPE only after Class C merge; all applicable safety/accessibility retained | 001/010 |
 | R16.03 | Reproducible dependency and build records | Pinned versions, lockfile, review license and hooks | ALL |
 | R17.01 | Optional permitted catalogue adapter | Separate source approval, mapping and tests; not first release blocker | 010 |
 | R17.02 | Social link extraction scope review | Public authorized organizational links only if separately approved | deferred |
@@ -76,3 +76,31 @@ Owner/operator: installs extension, selects permitted tab, defines recipes, revi
 ## Priority and definition of success
 P1/P2 mandatory usability milestone, P3/P4 mandatory reliable automation, P5/P6 mandatory agent modes, P7 mandatory handoff, P8 conditional features and final release. P8 extras cannot block P1. No account creation, purchases, messages, posting, credential harvesting, hidden endpoint scraping, or bot bypass. No cloning protected assets/code. No live source pilot without rights. No automatic parent database updates.
 A feature is accepted only when the mapped test passes on exact reviewed SHA, docs match observed behavior, failures are recorded, and Owner merges implementation PR. Manual success does not establish MCP success; fixture success does not establish site permission or compatibility.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+| ID | User-visible behavior | Acceptance / edge conditions | Task |
+|---|---|---|---|
+| R01.05 | Typed seven-state readiness UX; Checking is Awaiting Authorization with reason=checking, never an eighth state; distinguish expected denial from failure and clear Confirmed on context/edit change | contracts, broker, Side Panel, Sources request UI; UX-01,UX-02,UX-03,UX-04; No message-string authority or privileged command before validated readiness; trusted event not Owner identity | 002 /002.12;003.11 regression |
+| R02.06 | Generic repeating-group membership/selection identity only across tables/Grid/Flex/repeated elements; exact gold members or explicit ambiguity; extraction rows/field values belong to R03.01 | picker, DOM adapter, validated SelectionRef; COMP-01,COMP-02,COMP-03,COMP-04,COMP-05,COMP-06,COMP-11,COMP-14; Bounded membership; no field-value/extraction inference or global fallback | 002 /002.10,002.13;003.09 |
+| R02.07 | Live opaque record/scope tokens bound to actual node, source/grant/tab/document/generation/revision; cloned/recycled/cross-document tokens reject; no required data-record-id | contracts, content identity map, broker; COMP-06,COMP-07,COMP-10,AUTH-07,AUTH-08; Selector/key/ordinal is not authority; revalidate current exact member set before action | 002 /002.10;003.10 |
+| R02.08 | Token-based include/exclude and bounded contextual Undo; valid same-document changes reproducible; stale histories cannot restore old authorization, revision or another record | content selection history, Side Panel, recipe intent; COMP-04,COMP-06,AUTH-07,AUTH-08,UX-04; Fresh monotonic revision for Undo; clear incompatible snapshots; no positional fallback or minimum-selection bypass | 002 /002.11;003.10 |
+| R03.05 | Display mounted/current DOM coverage honestly; dynamic/replaced content needs safe reselection; pagination/virtualization do not imply full dataset or automatic navigation | picker, preview/result metadata, warnings; COMP-07,COMP-08,COMP-09,COMP-10,COMP-11,UX-01; No silent truncated total, background traversal or unapproved feature activation | 002 /002.10,002.13;003.09 |
+| R06.04 | Versioned durable identity/locator and saved exclusion intent resolve uniquely under a fresh document/grant/recipe review; identical/ambiguous keys require manual reselection; raw tokens are never replayed across documents | recipe/schema, local persistence, key/selector resolver; COMP-06,COMP-10,COMP-14,AUTH-07,AUTH-08; Strict imports/versioning, explicit storage rights for derived values, no silent selector broadening or approval carryover | 002 /002.10,002.11 and existing002.05;003.10 |
+| R13.06 | Separate activeTab/app approval and inspect/extract/store/export/nav; reviewed protected Fixture v2 permits future manual fixture extraction/storage/export, while early HTTPS pilot needs all PG-MANUAL-1 conditions | source-policy/contracts, protected grant seed, broker, operation gates; COMP-12,AUTH-01,AUTH-02,AUTH-05,AUTH-06,AUTH-09; Deny by default; no v1 broadening/UI fixture shadowing or claim of universal host-traffic prevention | 002 /002.09,002.13;003.09,003.11 |
+| R13.07 | Sources requests stay pending until appropriate Owner-controlled authority; source approval, capability expansion and expiry extension unavailable through MCP/daemon/AI/import/page/automated-agent or UI workflows; protected fixture grant read-only | Sources request UI, authority boundary, grant registry/audit, future actor/API policy; AUTH-03,AUTH-04,AUTH-10,UX-03; isTrusted or actor=owner is not human proof; if authority isolation unverified, approval/affected agent exposure BLOCKED; no backend dependency introduced in002 | 002 /002.09;003.11; carried006.03/06 and007.04/07/08 |
+| R13.08 | Current wall-clock expiry/status/revision and context checked at every applicable command and operation, after awaits/before effects; revoke/edits invalidate leases/queue/approvals despite MV3 sleep/restart/cached grants | broker, content guards, grant storage, extraction/storage/export boundaries; AUTH-03,AUTH-05,AUTH-06,AUTH-07,AUTH-08,AUTH-09,AUTH-10; No alarm-only authority, stale completion or Undo of revocation; do not promise suspended cleanup or recall of completed exports | 002 /002.09,002.10;003.10,003.11; carried006/007 |
+| R16.04 | Independent gold and bounded native source/template evidence; early pilot enters only through PG-MANUAL-1 at exact reviewed implementation SHA, rights/CSP/request evidence and Owner pilot decision; failed/unknown conditions BLOCKED | holdouts, scoped pilot packet, native/network evidence, independent review; COMP-01–14,AUTH-01–10,UX-01–04; HTTPS controlled pages preferred, no live loopback exception adopted; full006 gate remains; explicit offline-only scope decision required for reduced acceptance | 002 /002.13;003.09,003.11 |
+
+R02.06 membership/selection identity remains distinct from existing R03.01 extraction rows/fields. R13.06/07/08 and R16.04 additionally require protected pilot-grant configuration issuance under the exact G01/G09 tuple; AUTH-04/09/10 apply. No actual pilot grant is issued by this normative plan.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

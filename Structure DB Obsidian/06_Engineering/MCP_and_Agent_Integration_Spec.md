@@ -57,9 +57,25 @@ Error taxonomy: AUTH_REQUIRED, SCOPE_DENIED, POLICY_DENIED, STALE_DOCUMENT, LEAS
 - Prefer project-scoped configuration, no global hooks or arbitrary downloaded skills; inspect dependencies and consent.
 
 ## Optional Microsoft Playwright MCP
-Use upstream github.com/microsoft/playwright-mcp to inspect local fixtures or debug browser behavior after version/license review. Existing browser connection may require separate upstream extension and explicit tab selection; verify actual Chrome/Brave support. Do not assume it shares custom runner profile or bypasses site policy. Never attach unrestricted MCP to authenticated everyday browser as default; prefer dedicated fixture context. Do not run both controllers on same tab concurrently. Upstream tool availability not required for Tk-Web-Scraper core.
+Use upstream github.com/microsoft/playwright-mcp to inspect local fixtures or debug browser behavior after version/license review. Existing browser connection may require separate upstream extension and explicit tab selection; verify actual Google Chrome on Windows support. Do not assume it shares custom runner profile or bypasses site policy. Never attach unrestricted MCP to authenticated everyday browser as default; prefer dedicated fixture context. Do not run both controllers on same tab concurrently. Upstream tool availability not required for Tk-Web-Scraper core.
 ## Acceptance
 MCP protocol initialize/list tools/call typed tool; stdout protocol only, stderr sanitized. Reject malformed input, stale lease, unapproved run, excessive result page, untrusted page instruction, client disconnect; verify daemon job survives agent exit. Both Codex and Claude actual fixture demos, same contract; user can see proposal and revoke. If either client unavailable mark acceptance pending, not PASS. No paid API required.
 
 ## S3 packaging clarification
 See [[Skill_Packaging_and_Usage_Modes]]. Deliver a portable installable tk-web-scraper skill package plus client-specific supported setup in P5 (subtasks 007.01–007.06, MCP-10/11/12 and AGENT-01–04). Skill is workflow instructions, not an MCP runtime, installer, API key or authorization. Standalone P1/P2 extension runs without skill, model or server. P4 daemon runs approved recipes without agent after submission. P6 extension Local AI panel uses local planner to call LM Studio and validated daemon API. Codex/Claude subscriptions remain in their official clients; no subscription-to-API proxy. Actual invocation syntax validated on installed clients.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+## Grant-administration prohibition and007 security gate
+No MCP tool, daemon agent API/token, AI planner, import, page message or automated/Computer Use UI workflow may create/modify/approve/activate a source grant, expand capabilities or extend expiry. Agents may prepare pending requests only. isTrusted and actor=owner are not identity. Protected fixture/pilot config revisions require independently reviewed Owner-controlled authority/integrity outside agent channels; arbitrary files or overlapping grants cannot replace them. Before007 exposure independently verify actual capabilities in006.03/06 and007.04/07/08 using AUTH-10,SEC-18,AGENT-05/07. If isolation is unverified, affected approval/exposure BLOCKED. Current expiry/status/revision/scope/capability predicates apply at every privileged operation; alarms supplemental. No early daemon/MCP/AI prerequisite.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

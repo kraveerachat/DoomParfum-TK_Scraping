@@ -3,7 +3,7 @@ Choose npm workspaces monorepo, Node 24 LTS + TypeScript, MV3 extension with bun
 ## Components and boundaries
 Browser extension: injected isolated-world picker/extractor, service worker broker, sidepanel, standalone data page; IndexedDB for local datasets/recipes, chrome.storage for small settings, persisted lifecycle not in-memory worker. Offline/manual page extraction requires explicit user activation and source policy; no server required. A paired bridge is necessary for agent access to the current page. MV3 service-worker suspension handled by reconnect/resume; no reliance on perpetual socket.
 Local daemon: single owner of recipe validation, source grants, agent pairing, job scheduler, bounded storage, exports and audit. HTTP 127.0.0.1 only, explicit extension origin/host validation + per-client token; optional paired polling or WebSocket channel with bounded heartbeat and reconnect. No arbitrary shell/eval. Agent MCP stdio process delegates typed calls to daemon; agent never receives unrestricted access to browser or disk. Browser session lease with explicit tab consent and revocation; agent selection proposals previewed in extension. Long jobs owned by daemon, not MCP process or extension worker.
-Runner: dedicated Playwright browser/context, headed for debug, headless for authorized jobs, isolated profile by default. Manual login only on approved source and explicit profile choice; no cookie export. Browser tab lease prevents concurrency collision. Microsoft Playwright MCP is optional interactive development tool (separate extension for existing browser connection); never assume its session is shared with runner. Do not expose unrestricted upstream MCP for unattended production jobs. Brave compatibility must be tested; Chrome is reference browser; if Brave unsupported by upstream use own extension path or separate Chromium runner.
+Runner: dedicated Playwright browser/context, headed for debug, headless for authorized jobs, isolated profile by default. Manual login only on approved source and explicit profile choice; no cookie export. Browser tab lease prevents concurrency collision. Microsoft Playwright MCP is optional interactive development tool (separate extension for existing browser connection); never assume its session is shared with runner. Do not expose unrestricted upstream MCP for unattended production jobs. Chrome on Windows is the proposed sole mandatory native browser. Keep dedicated Chromium runner contexts separate; no Brave support requirement or claim.
 Model adapter: LM Studio local HTTP, provider interface; model outputs proposals only. No cloud API key required; Codex/Claude use their own supported subscription client and custom MCP. No subscription proxy or token harvesting.
 Data: local manual store vs daemon store explicit import/sync, version and conflict behavior; no automatic upload. Parent adapter writes reviewed staging bundle only.
 ## Flow
@@ -17,3 +17,13 @@ packages/{contracts,picker,extractor,recipes,runner,mcp,ai-provider,export,sourc
 integrations/{codex,claude}; tests/{fixtures,unit,integration,e2e,security}; scripts/; output/ and runtime/ ignored. Actual directories created only after Gate P. Shared contracts versioned; extension bundle cannot import Node modules. Use lockfile, pinned dependency versions, reproducible build and fixture-only CI.
 ## Alternatives
 Direct Playwright MCP only: fast prototype but no reliable job contract/permission enforcement; reject as primary. Hardcoded single-source scraper: easy initially but brittle and disallowed for unapproved source; use general recipe + optional permitted adapter. Crawlee: defer until queue complexity justifies; no cloud dependency. React UI: defer, reevaluate if state complexity warrants.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.
