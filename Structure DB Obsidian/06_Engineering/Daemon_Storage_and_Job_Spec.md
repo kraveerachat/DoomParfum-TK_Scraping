@@ -91,3 +91,21 @@ Terminal jobs immutable except separate reviewed annotation/export. Resume after
 Counters: attempted pages, completed pages, unique record keys, valid rows, quarantined, duplicates, failed detail pages, elapsed time, queued detail links, bytes stored. Never show estimated total as actual matched count. Stop codes: COMPLETE, MAX_PAGES, MAX_ROWS, MAX_ACTIONS, MAX_DURATION, NO_PROGRESS, CYCLE_DETECTED, NEXT_DISABLED, POLICY_DENIED, GRANT_EXPIRED, CHALLENGE, ACCESS_DENIED, RATE_LIMIT, SELECTOR_DRIFT, STORAGE_FULL, CANCELLED, WORKER_LOST, ERROR. Map finish reason to terminal state explicitly; no-progress on known final page may be complete only with fixture-proven semantics; otherwise partial. Progress polling bounded; no sensitive query strings in UI.
 ## Recovery and operational tests
 SQLite migration rollback, atomic checkpoint, duplicate retry, crash before/after transaction, stale lease write denied, cancellation in navigation and export, port collision, storage full, revocation, expiry, invalid idempotency, bounded result pagination. Test restart without network and actual Windows paths. Commands and test counts recorded only after implementation.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+## Source-grant authority and recovery constraints
+No MCP tool, daemon agent API/token, AI planner, import, page message or automated/Computer Use UI workflow may create/modify/approve/activate a source grant, expand capabilities or extend expiry. Agents may prepare pending requests only. isTrusted and actor=owner are not identity. Protected fixture/pilot config revisions require independently reviewed Owner-controlled authority/integrity outside agent channels; arbitrary files or overlapping grants cannot replace them. Before007 exposure independently verify actual capabilities in006.03/06 and007.04/07/08 using AUTH-10,SEC-18,AGENT-05/07. If isolation is unverified, affected approval/exposure BLOCKED. Current expiry/status/revision/scope/capability predicates apply at every privileged operation; alarms supplemental. No early daemon/MCP/AI prerequisite.
+
+Fixture v2 denies navigation/AI/assets; it cannot silently authorize later job or agent demonstrations. Later tests need an explicitly approved eligible grant.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

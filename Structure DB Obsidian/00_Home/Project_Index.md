@@ -1,3 +1,13 @@
+# Current amendment navigation — 2026-11-28
+
+- [[TKS-PLAN-002_Chrome_Generic_Compatibility_Amendment]] — Class C local preparation; approval/publication pending.
+- [[2026-11-28_TKS-PLAN-002_S1_Report]] / [[2026-11-28_TKS-PLAN-002_S1_Summary]] — exact normative/support inventory and validation.
+- [[TKS_PLAN_002_S1_Review_Provenance]] — preserved independently passed S14 review.
+- [[Browser_Support_Policy]] — proposed Chrome Windows scope, effective only on Owner merge.
+- [[Project_Status]] — current gates. Main approved counts 65/83/182; proposed counts 75/91/210.
+
+## Original baseline navigation (historical counts retained)
+
 # Project index — Tk-Web-Scraper
 ## Start here (master plan S2, proposed)
 - [[Master_Specification]] — end-to-end master plan and document map

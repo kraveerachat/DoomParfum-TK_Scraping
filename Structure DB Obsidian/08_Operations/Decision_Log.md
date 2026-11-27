@@ -8,3 +8,12 @@
 - Recipe draft vs normalized/approved contract clarified; no implicit self-approval. Proposed limits and performance targets require actual verification. Conditional/deferred tools remain non-mandatory and no bulk personal contacts.
 
 2026-11-25 / S3: Owner confirms PR #2 merged and wishes to begin coding. Verified actual main ffb9468dad7e383232fa7144e9cbfdbde58835ac; PR #1 still Draft. Clarified existing P5 reusable skill packaging and P6 local panel, not a new feature phase. Root navigation reconciled. Owner-only merge remains, no implementation until #1 merged.
+
+2026-11-28 / TKS-PLAN-002 S1: Owner explicitly authorizes local Class C preparation only.
+Carry forward explicit Chrome-only decision as a proposal effective on amendment approval/merge;
+no mandatory Brave target then, no historical result upgraded to PASS. Preserve final S14 review
+and protected LOW-5 pilot revision clauses; no actual grant. Four new support records plus
+required existing governance updates are separate from exact25 normative paths. Publication
+BLOCKED by authorization/identity/protection; no credential/settings changes. Amendment merge
+precedes separately authorized history-preserving IMP-001 integration, Chrome acceptance and
+Owner IMP-001 merge; IMP-002 requires separate authorization. See [[TKS-PLAN-002_Chrome_Generic_Compatibility_Amendment]].

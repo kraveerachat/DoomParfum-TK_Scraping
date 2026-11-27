@@ -6,7 +6,7 @@ S2 detailed proposed decisions; owner delegated architecture selection but Gate 
 | TKS-ADR-001 | Independent repository and export boundary | reusable optional companion | embedded parent code rejected; mapping work needed | proposed |
 | TKS-ADR-002 | Three modes share deterministic core | no AI per row, offline manual | AI-only browser clicking rejected | proposed |
 | TKS-ADR-003 | TypeScript npm workspace | common contract and validation | mixed-language stack adds coupling | proposed |
-| TKS-ADR-004 | MV3 sidepanel plus standalone table | familiar visual interaction, persistent results | popup-only insufficient; Brave smoke required | proposed |
+| TKS-ADR-004 | MV3 sidepanel plus standalone table | familiar visual interaction, persistent results | popup-only insufficient; Chrome Windows smoke required | proposed |
 | TKS-ADR-005 | Generic recipes + domain adapter | flexible and testable | hardcoded one-site crawler brittle and rights blocked | proposed |
 | TKS-ADR-006 | Fastify loopback daemon + SQLite | durable local jobs, no external DB | memory-only state insufficient; driver pending | proposed |
 | TKS-ADR-007 | Custom MCP stdio thin adapter | narrow policy-enforced tools | generic Playwright MCP optional only | proposed |
@@ -23,7 +23,7 @@ S2 detailed proposed decisions; owner delegated architecture selection but Gate 
 | Item | Owner / phase | Resolution evidence | Stop condition |
 |---|---|---|---|
 | O01 exact package versions and licenses | Codex P1/P3 | version matrix, lockfile, smoke | incompatible or unreviewed hook |
-| O02 Brave sidePanel behavior | Codex P1 | actual Windows manual test | fallback requires owner acceptance if UX differs materially |
+| O02 Brave sidePanel behavior (historical) | OUT OF SCOPE after Class C merge | No further investigation | Preserve historical observations/failure; not PASS |
 | O03 SQLite binding/secure token storage | Claude review + Codex P3 | Windows smoke, threat review | no insecure plaintext token storage |
 | O04 egress containment method | Claude review P4b | request/redirect/DNS negative tests | fixture-only until proven |
 | O05 client config/skill syntax | Codex/Claude P5 | both actual clients | unsupported integration marked pending |
@@ -35,3 +35,13 @@ S2 detailed proposed decisions; owner delegated architecture selection but Gate 
 | O11 performance threshold calibration | Codex P1/P4/P8 | measured fixture baseline and agreed target | no invented benchmark |
 | O12 publishing identity | Owner before agent Git writes | scoped authorized identity/permission | local-only if unavailable |
 Architecture acceptance does not waive these later compatibility/security/source checks. If a proposed solution fails, document alternative and impact; material change uses planning amendment, not silent rewrite.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

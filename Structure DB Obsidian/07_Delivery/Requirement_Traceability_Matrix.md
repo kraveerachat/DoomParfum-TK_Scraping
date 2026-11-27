@@ -1,8 +1,8 @@
 # Requirements-to-task-to-verification traceability
-S2 planning-only. 65 detailed requirements, 182 planned verification cases including conditional/deferred review cases. All cases NOT RUN. This table maps every requirement to at least one directly labelled case; applicable security, integration and regression cases also required. Task numbers refer to TKS-IMP-xxx; ALL means enforce at every relevant phase. Deferred features are not implementation authorization.
+S2 planning-only. 75 detailed requirements, 210 planned verification cases including conditional/deferred review cases. All cases NOT RUN. This table maps every requirement to at least one directly labelled case; applicable security, integration and regression cases also required. Task numbers refer to TKS-IMP-xxx; ALL means enforce at every relevant phase. Deferred features are not implementation authorization.
 | Requirement | Task | Direct verification IDs | Acceptance condition |
 |---|---|---|---|
-| R01.01 | 001 | EXT-01, EXT-02 | Chrome and Brave actual Windows smoke; unsupported browser explains fallback |
+| R01.01 | 001 | EXT-01; EXT-02 historical/proposed OUT OF SCOPE | Chrome Windows native toolbar/Side Panel and conditional fallback evidence; no native pass inferred from harness |
 | R01.02 | 001 | EXT-03 | Manual mode usable with daemon absent; no broken loading spinner |
 | R01.03 | 004 | COV-01 | No green connected before authenticated handshake |
 | R01.04 | 001 | EXT-10 | No invisible selection after tab changes; recovery from worker restart |
@@ -73,3 +73,31 @@ S2 planning-only. 65 detailed requirements, 182 planned verification cases inclu
 - Conditional COV-05 and deferred COV-06/07 are scope/rights review obligations, not permission to implement unapproved features.
 - Negative controls may cover multiple requirements; the direct map is a minimum, not an exhaustive regression exclusion.
 - Owner merge of this plan authorizes only the approved implementation scope; no source grant, parent database write or production deployment follows from this table.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+| Requirement | Task / subtask | Direct verification IDs | Acceptance / component boundary |
+|---|---|---|---|
+| R01.05 | 002 /002.12;003.11 regression | UX-01,UX-02,UX-03,UX-04 | Typed seven-state readiness UX; Checking is Awaiting Authorization with reason=checking, never an eighth state; distinguish expected denial from failure and clear Confirmed on context/edit change; components: contracts, broker, Side Panel, Sources request UI; No message-string authority or privileged command before validated readiness; trusted event not Owner identity |
+| R02.06 | 002 /002.10,002.13;003.09 | COMP-01,COMP-02,COMP-03,COMP-04,COMP-05,COMP-06,COMP-11,COMP-14 | Generic repeating-group membership/selection identity only across tables/Grid/Flex/repeated elements; exact gold members or explicit ambiguity; extraction rows/field values belong to R03.01; components: picker, DOM adapter, validated SelectionRef; Bounded membership; no field-value/extraction inference or global fallback |
+| R02.07 | 002 /002.10;003.10 | COMP-06,COMP-07,COMP-10,AUTH-07,AUTH-08 | Live opaque record/scope tokens bound to actual node, source/grant/tab/document/generation/revision; cloned/recycled/cross-document tokens reject; no required data-record-id; components: contracts, content identity map, broker; Selector/key/ordinal is not authority; revalidate current exact member set before action |
+| R02.08 | 002 /002.11;003.10 | COMP-04,COMP-06,AUTH-07,AUTH-08,UX-04 | Token-based include/exclude and bounded contextual Undo; valid same-document changes reproducible; stale histories cannot restore old authorization, revision or another record; components: content selection history, Side Panel, recipe intent; Fresh monotonic revision for Undo; clear incompatible snapshots; no positional fallback or minimum-selection bypass |
+| R03.05 | 002 /002.10,002.13;003.09 | COMP-07,COMP-08,COMP-09,COMP-10,COMP-11,UX-01 | Display mounted/current DOM coverage honestly; dynamic/replaced content needs safe reselection; pagination/virtualization do not imply full dataset or automatic navigation; components: picker, preview/result metadata, warnings; No silent truncated total, background traversal or unapproved feature activation |
+| R06.04 | 002 /002.10,002.11 and existing002.05;003.10 | COMP-06,COMP-10,COMP-14,AUTH-07,AUTH-08 | Versioned durable identity/locator and saved exclusion intent resolve uniquely under a fresh document/grant/recipe review; identical/ambiguous keys require manual reselection; raw tokens are never replayed across documents; components: recipe/schema, local persistence, key/selector resolver; Strict imports/versioning, explicit storage rights for derived values, no silent selector broadening or approval carryover |
+| R13.06 | 002 /002.09,002.13;003.09,003.11 | COMP-12,AUTH-01,AUTH-02,AUTH-05,AUTH-06,AUTH-09 | Separate activeTab/app approval and inspect/extract/store/export/nav; reviewed protected Fixture v2 permits future manual fixture extraction/storage/export, while early HTTPS pilot needs all PG-MANUAL-1 conditions; components: source-policy/contracts, protected grant seed, broker, operation gates; Deny by default; no v1 broadening/UI fixture shadowing or claim of universal host-traffic prevention |
+| R13.07 | 002 /002.09;003.11; carried006.03/06 and007.04/07/08 | AUTH-03,AUTH-04,AUTH-10,UX-03 | Sources requests stay pending until appropriate Owner-controlled authority; source approval, capability expansion and expiry extension unavailable through MCP/daemon/AI/import/page/automated-agent or UI workflows; protected fixture grant read-only; components: Sources request UI, authority boundary, grant registry/audit, future actor/API policy; isTrusted or actor=owner is not human proof; if authority isolation unverified, approval/affected agent exposure BLOCKED; no backend dependency introduced in002 |
+| R13.08 | 002 /002.09,002.10;003.10,003.11; carried006/007 | AUTH-03,AUTH-05,AUTH-06,AUTH-07,AUTH-08,AUTH-09,AUTH-10 | Current wall-clock expiry/status/revision and context checked at every applicable command and operation, after awaits/before effects; revoke/edits invalidate leases/queue/approvals despite MV3 sleep/restart/cached grants; components: broker, content guards, grant storage, extraction/storage/export boundaries; No alarm-only authority, stale completion or Undo of revocation; do not promise suspended cleanup or recall of completed exports |
+| R16.04 | 002 /002.13;003.09,003.11 | COMP-01–14,AUTH-01–10,UX-01–04 | Independent gold and bounded native source/template evidence; early pilot enters only through PG-MANUAL-1 at exact reviewed implementation SHA, rights/CSP/request evidence and Owner pilot decision; failed/unknown conditions BLOCKED; components: holdouts, scoped pilot packet, native/network evidence, independent review; HTTPS controlled pages preferred, no live loopback exception adopted; full006 gate remains; explicit offline-only scope decision required for reduced acceptance |
+
+Existing R03.01: extraction rows/fields consume a freshly validated SelectionRef; picker membership PASS is not extraction PASS. LOW-5 maps to R13.06/07/08,R16.04,002.09/13,003.09/11 and AUTH-04/09/10. No new IDs.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

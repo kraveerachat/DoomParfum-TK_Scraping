@@ -22,13 +22,13 @@ All test cases are PLANNED / NOT RUN. No runtime exists at P0. Tests below are p
 All fixture contents generated independently; no third-party source capture, real personal information, credentials or copyrighted assets. Expected values authored independently of implementation to prevent tests simply echoing output. Fixture server explicit narrow local grant; tests never resolve live blocked domain.
 
 ## Test design and execution
-Unit pure contracts/picker/normalization, integration stores/API/MCP, browser E2E synthetic fixture, actual Windows Chrome/Brave smoke, actual Codex/Claude/LM Studio smoke separately, security negative controls. Test data and clock where possible deterministic. Use fake time for expiry and bounded retries, actual browser navigation for egress controls, actual DB restart for recovery. Do not mock away the security boundary under test. CI fixture-only. Exact scripts created in relevant implementation tasks; P0 no runtime.
+Unit pure contracts/picker/normalization, integration stores/API/MCP, browser E2E synthetic fixture, actual Windows Chrome smoke, actual Codex/Claude/LM Studio smoke separately, security negative controls. Test data and clock where possible deterministic. Use fake time for expiry and bounded retries, actual browser navigation for egress controls, actual DB restart for recovery. Do not mock away the security boundary under test. CI fixture-only. Exact scripts created in relevant implementation tasks; P0 no runtime.
 
 ## EXT — task 001/002
 | Test ID | Requirement | Stimulus / setup | Expected assertion |
 |---|---|---|---|
 | EXT-01 | R01.01 | Load unpacked in clean Chrome Windows profile | Toolbar/side panel opens; version recorded |
-| EXT-02 | R01.01 | Load unpacked in clean Brave Windows profile | Actual side panel or documented approved fallback; no assumed support |
+| EXT-02 | R01.01 | PROPOSED OUT OF SCOPE — historical Brave-only native execution; retain ID | Effective only after Class C Owner merge; not PASS, not replaced or removed |
 | EXT-03 | R01.02 | Daemon/model not running | Home, manual tool usable; connection marked offline |
 | EXT-04 | R02.01 | Hover fixture card; scroll and resize | Box tracks geometry; host layout unchanged |
 | EXT-05 | R02.02 | 20-card grid plus unrelated sidebar | Exactly 20 gold keys; unrelated group excluded |
@@ -243,7 +243,7 @@ Unit pure contracts/picker/normalization, integration stores/API/MCP, browser E2
 | Test ID | Requirement | Stimulus / setup | Expected assertion |
 |---|---|---|---|
 | OPS-01 | R16.01 | Clean Windows installation | Pinned build and load guide reproducible |
-| OPS-02 | R16.02 | Chrome/Brave real browser smoke | Actual versions and functionality recorded |
+| OPS-02 | R16.02 | Google Chrome on Windows real browser smoke | Actual versions and functionality recorded |
 | OPS-03 | R16.01 | Daemon setup/stop and port conflict | Safe documented operation |
 | OPS-04 | R16.01 | Upgrade with existing fixture dataset | Migration preserves data and recipes |
 | OPS-05 | R16.01 | Rollback/restore backup | Supported prior state restored |
@@ -256,7 +256,7 @@ Unit pure contracts/picker/normalization, integration stores/API/MCP, browser E2
 | OPS-12 | R14.03 | Release end-to-end staging package | Manual, agents, local AI and parent dry-run verified |
 
 ## Evidence format and release gates
-Total planned verification cases: 182 (175 initial cases + 7 coverage/conditional review cases). Each execution report: test ID, exact command, environment/browser/client/model version, commit SHA, expected vs actual, pass/fail/skip/not run, exit code, evidence path, failure classification, limitations. Never fill PASS without execution. Coverage map links R01–R17 to tests above; R17 optional review only, not mandatory feature delivery. SEC suite threat coverage is explicit; future controls repeated when enabled.
+Total planned verification cases: 210 (182 baseline cases + 28 COMP/AUTH/UX additions, all additions NOT RUN). Each execution report: test ID, exact command, environment/browser/client/model version, commit SHA, expected vs actual, pass/fail/skip/not run, exit code, evidence path, failure classification, limitations. Never fill PASS without execution. Coverage map links R01–R17 to tests above; R17 optional review only, not mandatory feature delivery. SEC suite threat coverage is explicit; future controls repeated when enabled.
 Proposed quantitative targets (review before implementation): exact gold record/field match for deterministic extraction; zero unauthorized requests/actions, zero secret leakage in test outputs; bounded preview <=10 records and 64 KiB; result pagination <=100 records and 64 KiB; no duplicate committed rows after retry; no new request after cancellation observed. Hover responsiveness target p95 <=100 ms on F01 and <=250 ms on F14 1000 cards on owner host, subject to measurement/calibration; never claim benchmark before test. Local model target >=90% exact mapping on fixed gold set, zero unsafe actions executed, otherwise advisory/manual-only.
 Task gate: applicable tests pass and independent review exact SHA, all failures/skip explicit. Release gate: P1–P7 mandatory verified scopes, P8 operational suite, no unresolved blocker/high in released functionality, actual browser and client smoke, owner review, documentation/current status, backup/rollback. Source permission and parent actual import gates remain separate. If unavailable real client or model, mark relevant acceptance pending; do not report complete release.
 
@@ -270,4 +270,50 @@ Task gate: applicable tests pass and independent review exact SHA, all failures/
 | COV-05 | R17.01 | P8 conditional | Review optional permitted catalogue adapter; if approved implement owned fixture | Decision/rights/mapping recorded; optional not core gate |
 | COV-06 | R17.02 | Deferred review only | Review organizational social-link scope | No implementation absent separate approval; no bulk personal collection |
 | COV-07 | R17.03 | Deferred review only | Review email tool scope | Bulk personal contact harvesting excluded; no implementation in master plan |
-See [[Requirement_Traceability_Matrix]] for all 65 direct mappings. COV-05 conditional, COV-06/07 deferred review only; all NOT RUN.
+See [[Requirement_Traceability_Matrix]] for all 75 direct mappings. COV-05 conditional, COV-06/07 deferred review only; all NOT RUN.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+| Test ID | Requirement | Phase / owner | Stimulus and expected assertion | Status |
+|---|---|---|---|---|
+| COMP-01 | R02.06, R16.04 | 002.10/13 | COMP-P01 Grid: Independently authored div-grid variants without fixture classes/IDs resolve exact gold members and exclude nearby distractors | NOT RUN |
+| COMP-02 | R02.06, R16.04 | 002.10/13 | COMP-P02 Flex: Article Flexbox variants and CSS visual reorder preserve correct scoped membership, disclosed DOM order and usable overlays | NOT RUN |
+| COMP-03 | R02.06, R16.04 | 002.10/13 and existing002.01/02/04 | COMP-P03 table: Picker checks exact tbody membership only; separately authorized extractor under R03.01/002.01/02/04 checks output rows/fields; optional merged/direct-tr cases are declared variants | NOT RUN |
+| COMP-04 | R02.06, R02.08, R16.04 | 002.10/11/13;003.09 | COMP-P04 nested: Repeated section/list roots, Parent5/Child3, physical stepped travel, click/Enter and post-lock alternatives retain exact reviewed identity | NOT RUN |
+| COMP-05 | R02.06, R16.04 | 002.10/13; existing002.01/02;003.09 | COMP-P05 optional: Picker verifies expected optional/inconsistent membership or visible ambiguity; extractor independently validates field coverage/values, never inferred from picker PASS | NOT RUN |
+| COMP-06 | R02.06, R02.07, R02.08, R06.04, R16.04 | 002.10/11/13;003.10 | COMP-P06 IDs: No HTML/data-record-id or generated classes still supports live token filtering; unique durable keys replay only after fresh review; duplicate/identical keys cannot receive fake stable ordinals | NOT RUN |
+| COMP-07 | R02.07, R03.05, R16.04 | 002.10/13;003.09 | COMP-P07 dynamic: Delayed mount, insert/remove/reorder/text replacement invalidate incompatible lock/history; explicit reselection uses current gold DOM | NOT RUN |
+| COMP-08 | R03.05, R16.04 | 002.09/10/13 | COMP-P08 lifecycle: Reload/SPA URL/worker/extension contract upgrade rejects old tab/document/grant context and needs appropriate fresh activation | NOT RUN |
+| COMP-09 | R03.05, R16.04 | 002.13;003.09 | COMP-P09 pagination: Two manually selected approved pages of6 records remain separate documents; no false total12 or autonomous navigation | NOT RUN |
+| COMP-10 | R02.07, R03.05, R06.04, R16.04 | 002.10/13;003.09/10 | COMP-P10 virtualization: Eight mounted of50 logical rows report mounted scope only; recycled nodes/keys/content invalidate old tokens/snapshots; no hidden record harvesting | NOT RUN |
+| COMP-11 | R02.06, R03.05, R16.04 | 002.10/13 | COMP-P11 bounds: Depth/sibling/signature/outline/focus bounds terminate safely and disclose limitations; generated class churn cannot silently broaden selection | NOT RUN |
+| COMP-12 | R13.06, R16.04 | 002.09/13;003.09 | COMP-P12 origins: Equivalent DOM on two separately approved origins remains separately authorized; unknown/expired/revoked/wrong-path source has zero extension injection/read | NOT RUN |
+| COMP-13 | R16.04 | 002.13;003.09 | COMP-P13 pilot: PG-MANUAL-1 complete before each controlled HTTPS pilot; exact reviewed source/build/grant/page configuration and observed request evidence; native gold selection only in scope, else BLOCKED | NOT RUN |
+| COMP-14 | R02.06, R06.04, R16.04 | 003.09/10/11 | COMP-P14 detail: Optional detail/repeated div/article/section/li families preserve independent scope/identity; frame/shadow/hover/ambiguous limitations are declared without false completeness | NOT RUN |
+| AUTH-01 | R13.06, R16.04 | 002.09/13;003.11 | Revised capability/v1-v2 separation: Fixture v1 denies extraction/store/export; explicitly reviewed protected v2 allows only manual inspect/extract/local store/local export, denies nav/AI/assets/unknown origins; no capability implies another | NOT RUN |
+| AUTH-02 | R13.06, R16.04 | 002.09/13;003.09/11 | Revised exact scopes/scoped pilot model: App canonical origin/path/query/fragment denial holds; verify actual controlled pilot redirects/assets/destinations against its packet and named page/server/CSP/browser controls; unexpected/unknown behavior BLOCKED, no universal host-traffic prevention assertion | NOT RUN |
+| AUTH-03 | R13.07, R13.08, R16.04 | 002.09/13;003.11 | Expanded wall-clock/revision/lifecycle: Check expiry/status/revision on every applicable command, after await and before read/extract/store commit/export; worker asleep/restarted, cached-expired grant, active selection and stale document/revision reject; alarms supplemental, active-context cleanup and honest irreversible-effect limits | NOT RUN |
+| AUTH-04 | R13.07, R16.04 | 002.09/13;003.11 | Approval/import/protected fixture boundary: Page/model/import/agent data cannot self-approve, expand capability or extend expiry; ordinary UI/import cannot edit/replace/shadow protected fixture v1/v2; strict schemas and private-data minimization | NOT RUN |
+| AUTH-05 | R13.06, R13.08, R16.04 | 002.09/10/13;003.11 | New browser/document binding: Source approval without real gesture cannot inject; actual current browser URL, document/generation/grant and strict upgraded message context rechecked; legacy/cross-tab requests reject | NOT RUN |
+| AUTH-06 | R13.06, R13.08, R16.04 | 002.09/13 and existing002.04/05/07;003.11 | Persistence/export expiry boundary: Missing rights or wall-clock expiry/revoke before extraction/store/export effect deny; abort pending transaction where possible, no later writes/downloads or false success; completed permitted effects not falsely recalled | NOT RUN |
+| AUTH-07 | R02.07, R02.08, R06.04, R13.08, R16.04 | 002.10/11/13;003.10/11 | New token/Undo replay: Copied member/scope token across documents/grants/sessions rejects; Undo cannot restore old revision/authorization; valid same-context restoration issues a new revision | NOT RUN |
+| AUTH-08 | R02.07, R02.08, R06.04, R13.08, R16.04 | 002.10/11/13;003.10/11 | New identity replacement: Clone replacement and same-node virtualization key/content change invalidate old lock/exclusion/history; identical durable keys remain ambiguous; no ordinal fallback | NOT RUN |
+| AUTH-09 | R13.06, R13.08, R16.04 | 002.13;003.09/11; independent manual-pilot review, not full006 predecessor | New PG-MANUAL-1 admission: Each of ten mandatory conditions, exact code/config/grant/network/Owner packet, expiry/change and unexpected-destination stop checked; failed/unknown condition BLOCKED and no false pilot acceptance | NOT RUN |
+| AUTH-10 | R13.07, R13.08, R16.04 | 002.09 design/denial;006.03/06;007.04/07/08; SEC-18,AGENT-05/07 | New agent grant-administration isolation: MCP/daemon/AI/import/page/automated-agent and native UI-automation attempts cannot approve sources, expand capabilities or extend expiry; self-declared Owner/isTrusted insufficient; actual authority mechanism reviewed before007, affected approval/exposure blocked if unverified | NOT RUN |
+| UX-01 | R01.05, R03.05, R16.04 | 002.12/13;003.11 | Revised seven-state projection: Exactly seven states; Checking=Awaiting Authorization reason=checking; no active command during pending checks, correct denied/failure/Confirmed invalidation transitions | NOT RUN |
+| UX-02 | R01.05, R16.04 | 002.12/13;003.11 | Revised startup/readiness: Checking/gesture pending/expected authorization denial is distinct from Runtime Error; valid next STATUS can recover Idle before Start without lease bypass in Google Chrome on Windows | NOT RUN |
+| UX-03 | R01.05, R13.07, R16.04 | 002.09/12/13;003.11; carried007 | Revised Sources/Owner authority: Pending request→appropriate Owner-controlled approval→new revision→fresh gesture; protected fixture read-only; MCP/daemon/AI/UI agent cannot approve/expand/extend or use trusted event as identity | NOT RUN |
+| UX-04 | R01.05, R02.08, R16.04 | 002.11/12/13;003.11 | New accessible identity UI: Opaque-token filters have meaningful safe labels, correct same-context Undo, keyboard/focus/announcements and bounded zoom/width usability in Google Chrome on Windows | NOT RUN |
+
+AUTH-04 includes protected pilot configuration anti-edit/replace/shadow checks. AUTH-09 includes exact code/config/grant/rights/Owner packet mismatch, expiry/revocation and all ten pilot conditions. AUTH-10 denies agent/API/import/page/Computer Use configuration administration or approval. Existing SEC-18 and AGENT-05/07 retain carried obligations; no new case count. Before007 exposure independently review actual authority isolation under006.03/06 and007.04/07/08.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

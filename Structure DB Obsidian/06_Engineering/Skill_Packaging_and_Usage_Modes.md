@@ -4,7 +4,7 @@ Proposed clarification of R01/R03–R11, P1–P6; no new runtime implemented. Us
 ## Three entry points, one engine
 | Mode | Entry | Needed | Not required |
 |---|---|---|---|
-| Manual | Chrome/Brave extension side panel | unpacked MV3 build | Codex, Claude, model, daemon for single page |
+| Manual | Google Chrome on Windows extension side panel | unpacked MV3 build | Codex, Claude, model, daemon for single page |
 | Automated deterministic | extension Jobs UI or approved MCP submission | local daemon + Playwright runner + validated recipe | model after recipe is approved |
 | External agent | Codex/Claude Code chat | installed skill (optional convenience), registered custom MCP, daemon, extension for active-tab selection | separate model API key if using supported client subscription |
 | Local AI | extension Local AI panel | daemon + LM Studio local REST + supported model | cloud subscription, external agent |
@@ -32,3 +32,13 @@ A future distribution may add versioned installers or plugin packages only after
 
 ## Acceptance
 P5 demonstrate skill discovery/invocation or explicit supported fallback, MCP tools initialized, both real clients on owned fixture with identical semantic result, installation and removal docs; P6 demonstrate actual local model endpoint, invalid proposal blocked and no cloud fallback. Existing tests and task IDs apply. No new code, tools or installed skill in this planning checkpoint. Source grants and parent handoff remain separate.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

@@ -1,3 +1,26 @@
+# Current truth — 2026-11-28 / TKS-PLAN-002 S1
+
+LOCAL_ONLY amendment preparation complete on `plan/tks-plan-002-chrome-generic-compatibility` from verified main `ca385cb07d64df2e71303df7a003990d4d7bee0f`.
+Exact S14 patch applied; 25 normative hashes match. Proposed 75 requirements / 91 subtasks /
+210 registry cases; all 28 new NOT RUN. Owner Chrome-only decision becomes effective only
+after Class C approval/merge. EXT-02 retained proposed OUT OF SCOPE, never PASS.
+Independent S14 F1/F2/F3 resolved; Chrome/LOW-5/standalone/Class C PASS; mandatory findings 0.
+
+Main/PR #1 and governance PR #2 are merged; no open PR returned by fresh readback.
+Original IMP-001 branch remains clean at `901463aa11f2ac33f0339547927e85f672006845`; native acceptance remains incomplete;
+genuine observations and D02/D03 accepted deferrals preserved there. No runtime change,
+implementation approval, external grant, receipt or IMP-002 start.
+
+Publication BLOCKED: local-only authorization; Owner identity without verified dedicated identity
+or task-bounded publishing exception; main unprotected, ruleset disabled/incomplete with admin
+always-bypass. Auto-merge off. No remote settings or credential changes.
+Next: explicit publication authorization and governance gates; independent actual-commit review /
+Owner amendment merge; separately authorized history-preserving IMP-001 integration and remaining
+Chrome acceptance; Owner IMP-001 merge; separate IMP-002 instruction.
+See [[TKS-PLAN-002_Chrome_Generic_Compatibility_Amendment]], [[2026-11-28_TKS-PLAN-002_S1_Report]], [[2026-11-28_TKS-PLAN-002_S1_Summary]] and [[TKS_PLAN_002_S1_Review_Provenance]].
+
+## Preserved historical snapshots — superseded where stated above
+
 # Current truth — 2026-11-25
 TKS-PLAN-001 / S1: proposed docs-only baseline, Owner acceptance pending; initial main 40166f338ed3cf5c198a8e9add1217633812ab6b; no prior PR at intake. See task and live PR for latest publication evidence. P1–P8 NOT STARTED. Runtime tests NOT RUN. Fragrantica live access NO-GO; synthetic fixtures only until source rights verified. Parent read-only. Next Owner reviews plan; only after merge Codex P1. Do not infer state from historical records.
 

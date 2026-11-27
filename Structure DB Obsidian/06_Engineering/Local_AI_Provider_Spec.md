@@ -32,3 +32,21 @@ Gold fixture set: list grid 20 records+distractor; table with headers; missing o
 | Source grant changes | stop, clear pending proposal |
 ## Acceptance
 Real LM Studio smoke on owner host, discovery and selected model proposal, exact fixture comparison, negative cases and fallback. Document configuration without secrets. No local model required in CI; mocked provider for deterministic tests, actual integration separately marked. Model benchmark is P6 deliverable, not P0 evidence.
+
+## Class C compatibility amendment — approval packet pending
+This exact documentation payload is PROPOSED, not implementation or source authorization. S11 independent architecture/security review PASS applies to its reviewed design; LOW-5 protected issuance requires the affected-clause check and Owner decision. All28 added cases are NOT RUN. Approved status changes only through Owner merge of the separately authorized Class C unit.
+
+## Source approval and model context boundary
+No MCP tool, daemon agent API/token, AI planner, import, page message or automated/Computer Use UI workflow may create/modify/approve/activate a source grant, expand capabilities or extend expiry. Agents may prepare pending requests only. isTrusted and actor=owner are not identity. Protected fixture/pilot config revisions require independently reviewed Owner-controlled authority/integrity outside agent channels; arbitrary files or overlapping grants cannot replace them. Before007 exposure independently verify actual capabilities in006.03/06 and007.04/07/08 using AUTH-10,SEC-18,AGENT-05/07. If isolation is unverified, affected approval/exposure BLOCKED. Current expiry/status/revision/scope/capability predicates apply at every privileged operation; alarms supplemental. No early daemon/MCP/AI prerequisite.
+
+Denied AI-ingestion grants disclose no records to the model. Local inference is not an exception. Protected Fixture v2 remains AI-denied; no automatic capability upgrade to make tests pass.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

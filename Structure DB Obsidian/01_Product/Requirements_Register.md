@@ -1,5 +1,5 @@
 # Requirements register
-Owner intent (CONFIRMED from request): standalone optional companion to DoomParfum; visual browser extension on Brave/Chrome; manual point-and-click plus Codex/Claude agent operation; local model option through LM Studio; separate phases and reusable workflow; no required paid scraping subscription.
+Owner intent (CONFIRMED from request): standalone optional companion to DoomParfum; visual browser extension on Google Chrome on Windows; manual point-and-click plus Codex/Claude agent operation; local model option through LM Studio; separate phases and reusable workflow; no required paid scraping subscription.
 | ID | Requirement | Phase |
 |---|---|---|
 | R01 | Browser sidebar home, picker, recipes, data, jobs/settings | P1 |
@@ -17,6 +17,16 @@ Owner intent (CONFIRMED from request): standalone optional companion to DoomParf
 | R13 | Source approval, security, no secret storage, deterministic extraction, review | ALL |
 | R14 | Export JSON/CSV, normalized parent import candidate package, no direct DB writes | P7 |
 | R15 | Page text and permitted asset URL discovery, optional image download | P8 |
-| R16 | Installation guides, Brave/Chrome compatibility, local-first no required paid APIs | ALL |
+| R16 | Installation guides, Google Chrome on Windows compatibility, local-first no required paid APIs | ALL |
 | R17 | Shopify/public catalogue, social-link and email tools evaluated separately, default deferred | P8 |
 Manual extraction and automated jobs share permission policy. Source-specific targets are not source approval. No CAPTCHA bypass, stealth, credential extraction, unrestricted browser control, bulk personal contacts, or clone of proprietary code/assets. No cloud or multi-user requirement. Design UI independently, not a pixel copy.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.

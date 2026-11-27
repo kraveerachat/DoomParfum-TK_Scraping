@@ -26,8 +26,18 @@ Prior S1 reviewed upstream docs; exact package versions/license and runtime comp
 5. Pin compatible versions and lockfile in implementation PR; run audit and review findings (audit alone not security proof). No automatic major version upgrade; material architecture change planning amendment.
 6. Update Tool Registry and Usage Log, report path/version/permissions/rollback. Third-party README is guidance, not authority.
 ## Browser compatibility matrix
-Chrome stable Windows and Brave stable Windows are required manual verification in P1 and final P8. Test load unpacked, toolbar/action, sidebar APIs, injection with activeTab, storage, data tab, download, navigation cleanup, permissions revocation. Chromium automated fixture E2E useful but not proof actual Brave UI support. If Brave sidePanel unavailable, document supported standalone extension page and revalidate owner acceptance. Do not claim Firefox/Safari support. Microsoft Playwright MCP existing-tab connection separate extension/client, optional only. Chrome dedicated runner profile independent of everyday Brave profile.
+Google Chrome stable on Windows is the sole proposed mandatory native target in P1 and final P8. Verify actual versions, test-profile identity, installed build/permissions, real toolbar activeTab/revocation, native Side Panel, storage/data view/download, navigation/isolation/recovery and accessibility. Automated Chromium is supplementary, not native Chrome proof. Brave is proposed OUT OF SCOPE; no further Brave investigation. Preserve shared runtime components. Do not claim Firefox/Safari support. Optional Playwright MCP needs separate reviewed setup/authorization and a dedicated fixture context.
 ## Client and model compatibility
 P3 verify MCP SDK transport and protocol initialization; P5 verify actual Codex and Claude Code installed versions/config/skill syntax. No promise universal slash commands. P6 verify LM Studio endpoint/version and model capabilities; record real benchmark. No subscription/API equivalence assumed. If no client/model available, mark respective integration NOT RUN and retain manual capability.
 ## Build and supply-chain acceptance
 Clean npm ci on supported Windows, lockfile reproducibility, lint/type/test/build, extension manifest and local bundle checks, no secrets or runtime data in Git, dependency/license inventory and review. CI fixture-only network policy; package installation network distinguished from extraction network. For updates compare SBOM/dependency changes, test regression and provide rollback. Exact version decisions stay pending until preflight; not a reason to delay docs-only plan.
+
+## S13 browser-scope amendment — pending Owner approval/merge
+
+Google Chrome on Windows is the proposed sole mandatory native browser. Brave obligations
+are proposed OUT OF SCOPE, not PASS; prior observations remain historical. This is effective
+only on Class C Owner merge. All applicable source/security/lifecycle/accessibility controls
+remain. Shared Chromium-compatible runtime is preserved. See [[Browser_Support_Policy]].
+The Class C unit is independent of001 acceptance and must become effective first; it is not
+blocked on001 acceptance/merge. Later integration into001 requires separate explicit authority,
+preserved history/source/build/evidence and then remaining mandatory Chrome acceptance.
